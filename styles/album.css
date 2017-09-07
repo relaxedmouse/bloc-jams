@@ -40,6 +40,11 @@ body.album {
      font-weight: 300;
      font-size: 0.75em;
      border-collapse: collapse;
+     border: 2px solid black;
+     background-color: silver;
+     color: purple;
+     bord
+
  }
 
  .album-view-song-item {
@@ -48,17 +53,27 @@ body.album {
      border-bottom: 1px solid rgba(255,255,255,0.5);
  }
 
+.album-view-song-header {
+font-weight: bold;
+color: black;
+}
+
  .song-item-number {
-     width: 5%;
+     width: 10%;
+     color: black;
  }
 
  .song-item-title {
-     width: 85%;
+     width: 55%;
  }
 
  .song-item-duration {
-     width: 5%;
+     width: 10%;
  }
+
+.song-times-played {
+  width: 10%;
+}
 
  @media (max-width: 640px) and (min-width: 320px) {
     .album-view-details {
