@@ -20,7 +20,7 @@ var albumMarconi = {
     artist: 'Guglielmo Marconi',
     label: 'EM',
     year: '1909',
-    albumArtUrl: 'assets/images/album_covers/20.png',
+    albumArtUrl: 'assets/images/album_covers/01.png',
     songs: [
         { title: 'Hello, Operator?', duration: '1:01' },
         { title: 'Ring, ring, ring', duration: '5:01' },
@@ -29,6 +29,22 @@ var albumMarconi = {
         { title: 'Wrong phone number', duration: '2:15'}
     ]
 };
+
+var albumJesse = {
+    title: 'The Jesse',
+    artist: 'Jesse Versteeg',
+    label: 'Love',
+    year: '1993',
+    albumArtUrl: 'assets/images/album_covers/01.png',
+    songs: [
+        { title: 'Blue', duration: '4:20' },
+        { title: 'Green', duration: '3:20' },
+        { title: 'Red', duration: '5:20' },
+        { title: 'Pink', duration: '3:20'},
+        { title: 'Magenta', duration: '2:20'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -40,15 +56,15 @@ var createSongRow = function(songNumber, songName, songLength) {
 
      return template;
  };
- var setCurrentAlbum = function(album) {
-     // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+ // #1
+ var albumTitle = document.getElementsByClassName('album-view-title')[0];
+ var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+ var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+ var albumImage = document.getElementsByClassName('album-cover-art')[0];
+ var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
-     // #2
+ var setCurrentAlbum = function(album) {
+ // #2
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -65,4 +81,12 @@ var createSongRow = function(songNumber, songName, songLength) {
 
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+
+     var albums = [albumPicasso, albumMarconi, albumJesse];
+    var i = 1;
+     albumImage.addEventListener("click", function(event){
+       setCurrentAlbum(albums[i]);
+       i++;
+       if(i == albums.length){i = 0;}
+     })
  };
