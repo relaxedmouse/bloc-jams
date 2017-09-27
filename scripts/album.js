@@ -34,7 +34,7 @@ var albumMarconi = {
   artist: 'Guglielmo Marconi',
   label: 'EM',
   year: '1909',
-  albumArtUrl: 'assets/images/album_covers/02.jpg',
+  albumArtUrl: 'assets/images/album_covers/02.png',
   songs: [{
       title: 'Hello, Operator?',
       duration: '1:01'
@@ -63,7 +63,7 @@ var albumJesse = {
   artist: 'Jesse Versteeg',
   label: 'Love',
   year: '1993',
-  albumArtUrl: 'assets/images/album_covers/03.jpg',
+  albumArtUrl: 'assets/images/album_covers/03.png',
   songs: [{
       title: 'Blue',
       duration: '4:20'
