@@ -26,7 +26,7 @@ var buildCollectionItemTemplate = function() {
 
       // #3
       for (var i = 0; i < 12; i++) {
-          var $newThumbnail =buildCollectionItemTemplate();
+          var $newThumbnail = buildCollectionItemTemplate();
           $collectionContainer.append($newThumbnail);
       }
   });
